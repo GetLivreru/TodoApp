@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Шрифт */
+            background-color: #f0f4f8; /* Цвет фона */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-box {
+            font-family: Arial, sans-serif; /* Шрифт */
+            background-color: #3498db; /* Синий цвет фона */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+            color: white;
+            width: 500px; /* Ширина бокса */
+            height: 500px; /* Высота бокса */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 16px); /* Ширина поля ввода, учитывая внутренние отступы */
+            padding: 8px;
+            margin-bottom: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: calc(100% - 16px); /* Ширина кнопки, учитывая внутренние отступы */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2980b9; /* Цвет кнопки */
+            color: white;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #1f618d; /* Цвет кнопки при наведении */
+        }
+    </style>
+</head>
+<body>
+    <div class="register-box">
+        <h1>Welcome</h1>
+        <form action="/register" method="POST">
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" name="Email" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

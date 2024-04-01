@@ -4,8 +4,8 @@ body {
 }
 
 .container {
-    width: 60%; /* Центрируем содержимое на странице */
-    margin: 0 auto; /* Выравниваем по центру */
+    width: 60%;  
+    margin: 0 auto;  
 }
 
 h1 {
@@ -13,8 +13,8 @@ h1 {
 }
 
 .todo-form {
-    text-align: center; /* Центрируем формы по горизонтали */
-    margin-bottom: 20px; /* Добавляем небольшой отступ между формами и списком задач */
+    text-align: center;  
+    margin-bottom: 20px;  
 }
 
 ul {

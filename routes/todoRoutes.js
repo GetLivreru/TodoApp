@@ -6,7 +6,29 @@ const Todo = require("../models/todo");
 
 mongoose.connect('mongodb://127.0.0.1:27017/todo');
  
- 
+router.get("/register", (req, res) => {
+  res.render("register");
+});
+
+router.post("/register", async (req, res) => {
+  try {
+    // Обработка запроса регистрации
+  } catch (error) {
+    // Обработка ошибки при регистрации
+  }
+});
+
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
+router.post("/login", async (req, res) => {
+  try {
+    // Обработка запроса входа
+  } catch (error) {
+    // Обработка ошибки при входе
+  }
+});
 
 router.get("/todos", async (req, res) => {
   try {
@@ -56,4 +78,3 @@ router.delete("/todos/:id", async (req, res) => {
 });
 
 module.exports = router;
-
