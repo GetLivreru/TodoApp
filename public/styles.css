@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    width: 60%; /* Центрируем содержимое на странице */
+    margin: 0 auto; /* Выравниваем по центру */
+}
+
+h1 {
+    text-align: center;
+}
+
+.todo-form {
+    text-align: center; /* Центрируем формы по горизонтали */
+    margin-bottom: 20px; /* Добавляем небольшой отступ между формами и списком задач */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #555;
+}
+
+.toggle-form,
+.delete-form {
+    display: inline;
+    margin-left: 10px;
+}
+
+.delete-btn,
+.toggle-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-btn {
+    background-color: #28a745;
+}
+
+form {
+    display: inline;
+}

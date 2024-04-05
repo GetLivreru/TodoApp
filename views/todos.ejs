@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="container mx-auto p-6 bg-blue-200 rounded-lg">
+        <h1 class="text-3xl mb-6 text-center">Todo List</h1>
+
+        <div class="todo-form mb-6">
+            <form action="/todos" method="POST">
+                <label for="task">Add new task:</label>
+                <input
+                    autocomplete="off"
+                    type="text"
+                    id="task"
+                    name="task"
+                    required
+                    class="border rounded-md px-2 py-1"
+                />
+                <button type="submit" class="ml-2 bg-blue-500 text-white px-3 py-1 rounded-md">Add</button>
+            </form>
+
+            <form action="/todos" method="GET" class="search-form mt-4">
+                <input type="text" name="search" placeholder="Search tasks" class="border rounded-md px-2 py-1" />
+                <button type="submit" class="ml-2 bg-blue-500 text-white px-3 py-1 rounded-md">Search</button>
+            </form>
+        </div>
+
+        <ul class="todos">
+            <% todos.forEach(todo => { %>
+            <li class="mb-2">
+                <span class="<%= todo.completed ? 'completed' : '' %>">
+                    <%= todo.task %>
+                </span>
+                <form
+                    action="/todos/<%= todo.id %>?_method=PUT"
+                    method="POST"
+                    class="toggle-form"
+                >
+                    <button type="submit" class="ml-2 bg-green-500 text-white px-3 py-1 rounded-md">
+                        <%= todo.completed ? 'Undo' : 'Complete' %>
+                    </button>
+                </form>
+                <form
+                    action="/todos/<%= todo.id %>?_method=DELETE"
+                    method="POST"
+                    class="delete-form"
+                >
+                    <button type="submit" class="ml-2 bg-red-500 text-white px-3 py-1 rounded-md">Delete</button>
+                </form>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
