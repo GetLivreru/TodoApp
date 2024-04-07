@@ -1,11 +1,26 @@
 body {
     font-family: Arial, sans-serif; /* Шрифт */
     background-color: #f0f4f8; /* Цвет фона страницы */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding-top: 60px; /* Adjust the padding to accommodate the navbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 999; /* Ensure the navbar is above other content */
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .login-box {
@@ -17,6 +32,7 @@ body {
     color: white;
     width: 500px; /* Ширина бокса */
     height: 500px; /* Высота бокса */
+    margin: 80px auto 0; /* Adjust the margin to create space between navbar and login box */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,7 +42,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    width: 100%; 
+    width: 100%;
 }
 
 label {
@@ -35,7 +51,7 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: calc(100% - 16px);  
+    width: calc(100% - 16px);
     padding: 8px;
     margin-bottom: 16px;
     border: none;
@@ -43,7 +59,7 @@ input[type="password"] {
 }
 
 button[type="submit"] {
-    width: 100%;  
+    width: 100%;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
