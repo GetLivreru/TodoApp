@@ -12,9 +12,9 @@ router.get("/register", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    // Обработка запроса регистрации
+     
   } catch (error) {
-    // Обработка ошибки при регистрации
+     
   }
 });
 
@@ -24,9 +24,9 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    // Обработка запроса входа
+     
   } catch (error) {
-    // Обработка ошибки при входе
+     
   }
 });
 
