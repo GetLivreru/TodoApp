@@ -19,63 +19,42 @@ Technologies Used
  - To get started with ToDoApp, follow these steps:
 
 Clone the repository:
-
-bash 
-Copy code
+```
 git clone https://github.com/your-username/todoapp.git
+```
 Navigate to the project directory:
-
-bash
-Copy code
+```
 cd todoapp
+```
 Install dependencies:
-
-Copy code
+```
 npm install
-Set up MongoDB:
+```
+ - # Set up MongoDB:
 
-Install MongoDB if you haven't already.
-Start MongoDB server.
-Configure environment variables:
+ - Install MongoDB if you haven't already.
+ - Start MongoDB server.
+ - Configure environment variables:
 
-Create a .env file in the root directory.
-Add the following variables:
-makefile
-Copy code
+ - # Create a .env file in the root directory.
+ - Add the following variables:
+```
 PORT=3000
 MONGODB_URI=your-mongodb-uri
 SESSION_SECRET=your-session-secret
+```
 Run the application:
-
-sql
-Copy code
+``` 
 npm start
-Open your browser and visit http://localhost:3000 to use ToDoApp.
+Open your browser and visit http://localhost:3000/todos to use ToDoApp.
+```
 
-Contributing
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+ - # License
+ - This project is licensed under the MIT License. Feel free to use, modify, and distribute it as per the license terms.
 
-Fork the repository.
-Create your feature branch:
-css
-Copy code
-git checkout -b feature-name
-Commit your changes:
-sql
-Copy code
-git commit -am 'Add some feature'
-Push to the branch:
-perl
-Copy code
-git push origin feature-name
-Submit a pull request.
-License
-This project is licensed under the MIT License. Feel free to use, modify, and distribute it as per the license terms.
-
-Acknowledgements
-Tailwind CSS
-EJS
-Node.js
-Express.js
-MongoDB
-Thank you for using ToDoApp! If you have any questions or suggestions, feel free to reach out.
+ - # Acknowledgements
+ - Tailwind CSS
+ - EJS
+ - Node.js
+ - Express.js
+ - MongoDB
