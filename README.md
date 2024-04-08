@@ -2,25 +2,25 @@
 ## Welcome to ToDoApp, a simple web application where you can register, manage tasks, and mark them as complete. This project utilizes Node.js with Express framework, MongoDB for database management, and implements password hashing for user security.
 
 Technologies Used
- - Frontend:
+ - # Frontend:
  - Tailwind CSS
  - EJS (Embedded JavaScript)
-JavaScript
-Backend:
-Node.js
-Express.js
-Database:
-MongoDB
-Features
-User Registration: Users can create an account with a unique username and a securely hashed password stored in the database.
-Task Management: Users can create, update, delete, and mark tasks as complete.
-Password Hashing: User passwords are securely hashed and stored in the database for enhanced security.
-Getting Started
-To get started with ToDoApp, follow these steps:
+ - JavaScript
+ - # Backend:
+ - Node.js
+ - Express.js
+ - # Database:
+ - MongoDB
+ - # Features
+ - User Registration: Users can create an account with a unique username and a securely hashed password stored in the database.
+ - Task Management: Users can create, update, delete, and mark tasks as complete.
+ - Password Hashing: User passwords are securely hashed and stored in the database for enhanced security.
+ - # Getting Started
+ - To get started with ToDoApp, follow these steps:
 
 Clone the repository:
 
-bash
+bash 
 Copy code
 git clone https://github.com/your-username/todoapp.git
 Navigate to the project directory:
