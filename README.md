@@ -1,5 +1,5 @@
-##ToDoApp##
-Welcome to ToDoApp, a simple web application where you can register, manage tasks, and mark them as complete. This project utilizes Node.js with Express framework, MongoDB for database management, and implements password hashing for user security.
+ ## ToDoApp ##
+## Welcome to ToDoApp, a simple web application where you can register, manage tasks, and mark them as complete. This project utilizes Node.js with Express framework, MongoDB for database management, and implements password hashing for user security.
 
 Technologies Used
 Frontend:
