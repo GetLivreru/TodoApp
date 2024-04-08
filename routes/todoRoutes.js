@@ -12,11 +12,16 @@ router.get("/register", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-     
+    const { name, email, password } = req.body;
+    const newUser = new Todo({ name, email, password });
+    await newUser.save();
+    res.redirect("/login");
   } catch (error) {
-     
+    console.error("Error registering user:", error);
+    res.status(500).send({ success: false, message: "Error registering user" });
   }
 });
+
 
 router.get("/login", (req, res) => {
   res.render("login");
@@ -24,9 +29,24 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-     
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).send({ success: false, message: "User not found" });
+    }
+
+    const isPasswordValid = await user.comparePassword(password);
+
+    if (!isPasswordValid) {
+      return res.status(400).send({ success: false, message: "Invalid password" });
+    }
+
+    // Вы можете выполнить дополнительные действия здесь, например, создать сеанс для пользователя
+
+    res.redirect("/todos"); // Перенаправьте пользователя на другую страницу после успешного входа
   } catch (error) {
-     
+    res.status(500).send({ success: false, message: "Error logging in" });
   }
 });
 

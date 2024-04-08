@@ -1,10 +1,35 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const todoSchema = new mongoose.Schema({
-  task: { type: String, required: true },
-  completed: { type: Boolean, default: false },
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
 });
 
-const Todo = mongoose.model("Todo", todoSchema);
+// Pre-save hook to hash the password before saving to the database
+userSchema.pre("save", async function(next) {
+  try {
+    if (!this.isModified("password")) {
+      return next();
+    }
+    const hashedPassword = await bcrypt.hash(this.password, 10);
+    this.password = hashedPassword;
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
-module.exports = Todo;
+// Method to compare passwords during login
+userSchema.methods.comparePassword = async function(candidatePassword) {
+  try {
+    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
