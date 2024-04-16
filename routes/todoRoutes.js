@@ -4,7 +4,7 @@ const router = express.Router();
 const path = require("path");
 const Todo = require("../models/todo");
 
-mongoose.connect('mongodb://127.0.0.1:27017/todo');
+mongoose.connect('mongodb://127.0.0.1:27017/LaptopStore');
  
 router.get("/register", (req, res) => {
   res.render("register");
@@ -12,8 +12,8 @@ router.get("/register", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    const newUser = new Todo({ name, email, password });
+    const { email,username,password } = req.body;
+    const newUser = new Todo({ email,username,password });
     await newUser.save();
     res.redirect("/login");
   } catch (error) {
@@ -29,8 +29,8 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
+    const { username, password } = req.body; // Извлекаем username и password из запроса
+    const user = await Todo.findOne({ username }); // Ищем пользователя по username
 
     if (!user) {
       return res.status(400).send({ success: false, message: "User not found" });
@@ -44,7 +44,7 @@ router.post("/login", async (req, res) => {
 
     // Вы можете выполнить дополнительные действия здесь, например, создать сеанс для пользователя
 
-    res.redirect("/todos"); // Перенаправьте пользователя на другую страницу после успешного входа
+    res.redirect("/"); // Перенаправляем пользователя на главную страницу после успешного входа
   } catch (error) {
     res.status(500).send({ success: false, message: "Error logging in" });
   }
