@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const router = express.Router();
-const path = require("path");
 const Todo = require("../models/todo");
 
 mongoose.connect('mongodb://127.0.0.1:27017/LaptopStore');
@@ -29,8 +28,8 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    const { username, password } = req.body; // Извлекаем username и password из запроса
-    const user = await Todo.findOne({ username }); // Ищем пользователя по username
+    const { username, password } = req.body;  
+    const user = await Todo.findOne({ username });  
 
     if (!user) {
       return res.status(400).send({ success: false, message: "User not found" });
